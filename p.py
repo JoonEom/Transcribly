@@ -1,9 +1,10 @@
 import requests
 import openai
+import config
 #store variables
 image_file = 'images/ex1.png'
 ninja_api_key = '/qo4nl7zaPTX2rfUgfKa4Q==vyiHpbAVgI610GKR'
-openai_api_key = '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'
+openai_api_key = config.open_api_key
 #fetch api (from api-ninjas api docs)
 url = 'https://api.api-ninjas.com/v1/imagetotext'
 image = open(image_file, 'rb')
