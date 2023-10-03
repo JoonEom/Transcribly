@@ -12,3 +12,4 @@ Summarization: Generate concise summaries from extracted text for quick referenc
 
 User-Friendly Interface: Intuitive design for a seamless experience.
 
+![Alt Text](images/transcribly.png)

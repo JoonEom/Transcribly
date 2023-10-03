@@ -5,6 +5,7 @@ import config
 
 
 app = Flask(__name__)
+
 user_image = ""
 
 @app.route('/')
@@ -29,6 +30,7 @@ def upload_summary():
     image_file = 'static/uploads/' + user_image
     ninja_api_key = config.ninja_api_key
     openai_api_key = config.open_api_key
+
     #fetch api (from api-ninjas api docs)
     url = 'https://api.api-ninjas.com/v1/imagetotext'
     image = open(image_file, 'rb')

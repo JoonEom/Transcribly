@@ -2,8 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #aee4ed;
+
 }
+
 
 #title-container{
     display: flex;
@@ -13,7 +16,13 @@
     
 }
 .title{
-    font-size: 40px;
+    font-size: 50px;
+    font-weight: bold;
+    transition: font-size 0.3s ease, color 0.3s ease; 
+}
+.title:hover {
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.662);
 }
 .about{
     margin-top: 30px;
@@ -29,35 +38,59 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: lightblue;
+    background-color: #5a79c8;
     width: 48%;
+    border-radius: 30px;
 }
 .chat-gpt-title{
     font-size: 30px;
     margin: 10px;
+    background-color: #5a79c8;
+}
+.chat-gpt-summary-container{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #5a79c8;
+    border-radius: 30px;
 }
 .chat-gpt-summary{
     padding: 10px;
     margin: 10px;
-    border: 5px solid white;
+    border-radius: 30px;
+    background-color: #5a79c8;
+    overflow: hidden; 
+    animation: typing 2s steps(40);
 }
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
 .image-container{
-    background-color: coral;
+    background-color: #5fb7cf;
     width: 48%;
     display: flex;
     justify-content: center;
+    border-radius: 30px;
 }
 .image-button{
     margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #5fb7cf;
 
 }
 .image{
     margin-top: 20px;
     margin-bottom: 20px;
     width: 95%;
+    border-radius: 10px;
+
 }
 .generate{
     display: flex;
@@ -66,4 +99,29 @@
 }
 .button{
     padding: 10px;
+    background-color: #eeeeee;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+.button:hover{
+    background-color: rgb(203, 203, 203);
+    cursor: pointer;
+
+}
+.upload{
+    margin: 10px;
+    padding: 10px;
+    background-color: #eeeeee;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+}
+.upload:hover{
+    background-color: rgb(203, 203, 203);
+    cursor: pointer;
+
+}
+
+.choose-file{
+    padding: 10px;
+    background-color: #5fb7cf;
 }

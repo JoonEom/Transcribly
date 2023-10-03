@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
     <title>Transcribly</title>
 </head>
 <body>
     <div id="title-container">
-        <div class="title">Transcribly</div>
+        <div class="title" id="clickable-text">Transcribly</div>
         <div class="about">Say goodbye to the frustration of unselectable text on images! Introducing Transcribly, the ultimate solution for effortlessly extracting and summarizing text from images!</div>
+        <br>
+        <div>  Once you click generate, give me a second as it might take a while for me to read! </div>
     </div>
     <div id="container">
         <div class="image-container">
             <form class="image-button" action="/upload" method="post" enctype="multipart/form-data">
-                <input type="file" name="file">
-                <input type="submit" value="Upload">
+                <input class="choose-file" type="file" name="file">
+                <input type="submit" value="Upload" class="upload">
                 {% if filename %}
-                    <div>{{ filename }} uploaded</div>
+                    <div style="background-color: #5fb7cf;">{{ filename }} uploaded</div>
                     <img class="image" src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
                 {% endif %}
             </form>
@@ -25,15 +30,23 @@
         </div>
         <div class="summary-container">
             <div class="chat-gpt-title"> Chat-GPT Summary</div>
-            {% if response %}
-            <div class="chat-gpt-summary">{{response}}</div>
-            {% endif %}
+            <div class="chat-gpt-summary-container">
+                {% if response %}
+                    <div class="chat-gpt-summary">{{response}}</div>
+                {% endif %}
+            </div>    
+        
         </div>
     </div>
     <form class="generate" action="upload/summary" method="post">
         <button class="button" type='submit'>Generate</button>
     </form>
     
+    <script>
+        document.getElementById('clickable-text').addEventListener('click', function() {
+            window.location.href = '/';
+        });
+    </script>
 
 </body>
 </html>
